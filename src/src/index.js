@@ -29,6 +29,15 @@ if ($modalCloses.length > 0) {
     });
 }
 
+$modals.forEach(function ($modal) {
+    const $background = $modal.querySelector('.modal-background');
+    if ($background) {
+        $background.addEventListener('click', function () {
+            closeModals();
+        });
+    }
+});
+
 function openModal(target) {
     var $target = document.getElementById(target);
     rootEl.classList.add('is-clipped');
